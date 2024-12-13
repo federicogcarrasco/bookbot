@@ -1,6 +1,15 @@
+import sys
+
 def main():
-    path = "books/frankenstein.txt"
-    text = read_content(path)
+    if len(sys.argv) == 1:
+        print("Please enter a relative path as first argument of this application.")
+        return
+    path = sys.argv[1]
+    try:
+        text = read_content(path)
+    except:
+        print("File not found. First argument should be a relative path to a text file.")
+        return
     number_of_words = count_words(text)
     character_dict = count_characters(text)
     character_list = character_dict_to_list(character_dict)
