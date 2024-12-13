@@ -25,7 +25,7 @@ def count_words(text):
 
 def count_characters(text):
     character_dict = {}
-    for character in text.lower():
+    for character in text.upper():
         if character in character_dict:
             character_dict[character] += 1
         else:
